@@ -1,0 +1,36 @@
+{
+  "ICH-GCPガイドライン": [
+    {"title": "【2026年最新】ICH E6(R3)改訂のポイントと実務への影響", "keyword": "ICH E6(R3) 改訂 2026", "score": 96},
+    {"title": "ICH-GCPガイドラインの全体像 — 初心者向け完全解説", "keyword": "ICH-GCP ガイドライン わかりやすく", "score": 92},
+    {"title": "E6(R2)とE6(R3)の違い — 改訂ポイント比較表つき", "keyword": "E6(R2) E6(R3) 違い", "score": 90}
+  ],
+  "モニタリング実務": [
+    {"title": "SDV（原資料照合）の効率的なやり方 — ベテランCRAのテクニック", "keyword": "SDV やり方 コツ", "score": 93},
+    {"title": "モニタリング報告書の書き方テンプレート【コピペで使える】", "keyword": "モニタリング報告書 書き方", "score": 91}
+  ],
+  "同意説明文書・ICF": [
+    {"title": "同意説明文書（ICF）の作成チェックリスト【2026年版】", "keyword": "同意説明文書 作成 チェックリスト", "score": 90},
+    {"title": "eConsent（電子同意）導入ガイド — メリット・課題・事例", "keyword": "eConsent 導入 メリット", "score": 87}
+  ],
+  "査察対応": [
+    {"title": "FDA査察の準備完全ガイド — 頻出指摘事項と対策", "keyword": "FDA査察 準備 チェックリスト", "score": 95},
+    {"title": "PMDA適合性調査の対応マニュアル【実務者向け】", "keyword": "PMDA適合性調査 対応", "score": 93},
+    {"title": "EMA GCP Inspectionの最新トレンドと日本への影響", "keyword": "EMA GCP Inspection 最新", "score": 85}
+  ],
+  "GCP最新ニュース": [
+    {"title": "ICH E6(R3)最終化 — 各極の実施スケジュールまとめ", "keyword": "ICH E6(R3) 最終化 スケジュール", "score": 97},
+    {"title": "FDA臨床試験ガイダンス最新情報【2026年上半期】", "keyword": "FDA ガイダンス 臨床試験 2026", "score": 88}
+  ],
+  "リスクベースドモニタリング": [
+    {"title": "RBM（リスクベースドモニタリング）導入ガイド — ゼロから始める手順", "keyword": "RBM 導入 手順", "score": 94},
+    {"title": "中央モニタリングとオンサイトモニタリングの使い分け実践ガイド", "keyword": "中央モニタリング オンサイト 違い", "score": 89}
+  ],
+  "治験届・申請実務": [
+    {"title": "治験届（CTN）の書き方と提出手順 — 初めての方向け", "keyword": "治験届 書き方 手順", "score": 91},
+    {"title": "IND申請と治験届の違い — 日米の規制比較", "keyword": "IND申請 治験届 違い", "score": 86}
+  ],
+  "海外トレンド翻訳": [
+    {"title": "FDA Decentralized Clinical Trials（DCT）ガイダンス — 日本語要約", "keyword": "DCT ガイダンス FDA 翻訳", "score": 92},
+    {"title": "TransCelerate最新レポート — 治験効率化の国際トレンド", "keyword": "TransCelerate レポート 翻訳", "score": 84}
+  ]
+}
