@@ -113,10 +113,22 @@ JSON形式で生成してください。
                     end = raw.rfind("}") + 1
                     if start >= 0 and end > start:
                         raw = raw[start:end]
-                # 制御文字を除去してからパース（strict=Falseで残りの制御文字も許容）
+                # 制御文字を除去してからパース
                 raw = self._sanitize_json_string(raw)
-                data = json.loads(raw, strict=False)
-            except json.JSONDecodeError as e:
+                try:
+                    data = json.loads(raw, strict=False)
+                except json.JSONDecodeError:
+                    # json_repairで壊れたJSONを修復
+                    try:
+                        from json_repair import repair_json
+                        repaired = repair_json(raw, return_objects=False)
+                        data = json.loads(repaired, strict=False)
+                        logger.info("json_repairでJSONを修復しました")
+                    except Exception as repair_err:
+                        raise ValueError(f"JSON修復も失敗: {repair_err}")
+            except ValueError:
+                raise
+            except Exception as e:
                 raise ValueError(f"JSONパース失敗: {e}") from e
 
             required = ["title", "content", "meta_description", "tags", "slug"]
