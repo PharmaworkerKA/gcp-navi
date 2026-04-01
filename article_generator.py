@@ -40,6 +40,7 @@ except ImportError:
 
         def generate_article(self, keyword: str, category: str, prompts=None) -> dict:
             """キーワードとカテゴリからSEO最適化されたブログ記事を生成する"""
+            import time
             prompts = prompts or self.prompts
 
             if prompts and hasattr(prompts, "build_article_prompt"):
@@ -47,9 +48,22 @@ except ImportError:
             else:
                 prompt = self._build_default_prompt(keyword, category)
 
-            response = self.client.models.generate_content(
-                model=self.model_name, contents=prompt
-            )
+            # 最大3回リトライ（サーバー切断対策）
+            last_error = None
+            for attempt in range(3):
+                try:
+                    response = self.client.models.generate_content(
+                        model=self.model_name, contents=prompt
+                    )
+                    break
+                except Exception as e:
+                    last_error = e
+                    logger.warning("Gemini API呼び出し失敗（%d/3）: %s", attempt + 1, e)
+                    if attempt < 2:
+                        time.sleep(5)
+            else:
+                raise ValueError(f"Gemini API呼び出し3回失敗: {last_error}")
+
             article = self._parse_response(response.text)
             article["keyword"] = keyword
             article["category"] = category
