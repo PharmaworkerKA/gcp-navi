@@ -13,7 +13,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -36,7 +36,7 @@ jobs:
       - name: Collect topics
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python topic_collector.py
+        run: timeout 180 python topic_collector.py || echo "Topic collection timed out or failed, continuing..."
         continue-on-error: true
 
       - name: Generate article and build site

@@ -8,6 +8,8 @@ blog_engine共通モジュールを使用し、フォールバックとしてロ
 """
 import json
 import logging
+import os
+import signal
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -45,18 +47,37 @@ def run(cfg=None, prm=None):
         if d:
             Path(d).mkdir(parents=True, exist_ok=True)
 
-    # ステップ0: トピック収集（オプション）
+    # ステップ0: トピック収集（オプション・タイムアウト120秒）
     logger.info("ステップ0: トピック収集")
+    next_topic = None
     try:
+        import threading
         from topic_collector import TopicCollector
-        collector = TopicCollector(cfg, prm)
-        topics = collector.collect_all()
-        next_topic = collector.get_next_topic()
-        if next_topic:
-            logger.info("次のトピック: %s (スコア: %s)", next_topic.get("title", "?"), next_topic.get("score", "?"))
+
+        topic_result = {"topic": None, "error": None}
+
+        def _collect_topics():
+            try:
+                collector = TopicCollector(cfg, prm)
+                collector.collect_all()
+                topic_result["topic"] = collector.get_next_topic()
+            except Exception as e:
+                topic_result["error"] = e
+
+        t = threading.Thread(target=_collect_topics, daemon=True)
+        t.start()
+        t.join(timeout=120)  # 最大120秒で打ち切り
+
+        if t.is_alive():
+            logger.warning("トピック収集タイムアウト（120秒超過）、スキップします")
+        elif topic_result["error"]:
+            raise topic_result["error"]
+        else:
+            next_topic = topic_result["topic"]
+            if next_topic:
+                logger.info("次のトピック: %s (スコア: %s)", next_topic.get("title", "?"), next_topic.get("score", "?"))
     except Exception as e:
         logger.warning("トピック収集スキップ: %s", e)
-        next_topic = None
 
     # ステップ1: キーワード選定
     logger.info("ステップ1: キーワード選定")
