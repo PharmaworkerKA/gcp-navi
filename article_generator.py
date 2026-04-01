@@ -78,18 +78,30 @@ JSON形式で生成してください。
 }}
 ```"""
 
+        @staticmethod
+        def _sanitize_json_string(text):
+            """JSON文字列中の不正な制御文字を除去する"""
+            # JSON仕様で許可されていない制御文字 (U+0000-U+001F) のうち
+            # \n \r \t 以外を除去し、残りはエスケープ済みに変換
+            def _replace_ctrl(m):
+                ch = m.group(0)
+                if ch in ('\n', '\r', '\t'):
+                    return ch
+                return ''
+            return re.sub(r'[\x00-\x1f]', _replace_ctrl, text)
+
         def _parse_response(self, response_text):
             json_match = re.search(r"```json\s*(.*?)\s*```", response_text, re.DOTALL)
             try:
-                if json_match:
-                    data = json.loads(json_match.group(1))
-                else:
-                    cleaned = response_text.strip()
-                    start = cleaned.find("{")
-                    end = cleaned.rfind("}") + 1
+                raw = json_match.group(1) if json_match else response_text.strip()
+                if not json_match:
+                    start = raw.find("{")
+                    end = raw.rfind("}") + 1
                     if start >= 0 and end > start:
-                        cleaned = cleaned[start:end]
-                    data = json.loads(cleaned)
+                        raw = raw[start:end]
+                # 制御文字を除去してからパース
+                raw = self._sanitize_json_string(raw)
+                data = json.loads(raw)
             except json.JSONDecodeError as e:
                 raise ValueError(f"JSONパース失敗: {e}") from e
 
