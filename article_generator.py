@@ -73,6 +73,7 @@ JSON形式で生成してください。
   "meta_description": "120文字以内",
   "tags": ["タグ1", "タグ2", "タグ3", "タグ4", "タグ5"],
   "slug": "url-friendly-slug",
+  "image_search_query": "記事内容を象徴する英語の画像検索キーワード（2-3語、例: artificial intelligence robot）",
   "faq": [{{"question": "Q", "answer": "A"}}]
 }}
 ```"""
@@ -100,6 +101,7 @@ JSON形式で生成してください。
             if not isinstance(data["tags"], list):
                 data["tags"] = [data["tags"]]
             data["slug"] = re.sub(r"[^a-z0-9-]", "", data["slug"].lower().replace(" ", "-"))
+            data.setdefault("image_search_query", "")
             return data
 
         def _save_article(self, article):

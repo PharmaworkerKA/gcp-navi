@@ -183,6 +183,7 @@ def build_article_prompt(keyword, category, config):
   "meta_description": "120文字以内のメタディスクリプション",
   "tags": ["タグ1", "タグ2", "タグ3", "タグ4", "タグ5"],
   "slug": "url-friendly-slug",
+  "image_search_query": "記事内容を象徴する英語の画像検索キーワード（2-3語、例: artificial intelligence robot）",
   "faq": [
     {{"question": "質問1", "answer": "回答1"}},
     {{"question": "質問2", "answer": "回答2"}}

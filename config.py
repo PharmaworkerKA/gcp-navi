@@ -96,3 +96,9 @@ GOOGLE_ANALYTICS_ID = "G-CSFVD34MKK"
 SITE_VERIFICATION_FILES = {
     "googlea31edabcec879415.html": "google-site-verification: googlea31edabcec879415.html",
 }
+
+# コンテンツ画像設定（Google Drive から記事内に画像を自動挿入）
+CONTENT_IMAGES_ENABLED = True
+CONTENT_IMAGES_FOLDER_ID = os.environ.get("CONTENT_IMAGES_FOLDER_ID", "")
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
+CONTENT_IMAGES_PER_ARTICLE = 3
