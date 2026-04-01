@@ -113,9 +113,9 @@ JSON形式で生成してください。
                     end = raw.rfind("}") + 1
                     if start >= 0 and end > start:
                         raw = raw[start:end]
-                # 制御文字を除去してからパース
+                # 制御文字を除去してからパース（strict=Falseで残りの制御文字も許容）
                 raw = self._sanitize_json_string(raw)
-                data = json.loads(raw)
+                data = json.loads(raw, strict=False)
             except json.JSONDecodeError as e:
                 raise ValueError(f"JSONパース失敗: {e}") from e
 
