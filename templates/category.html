@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ blog_language }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ category }} | {{ blog_name }}</title>
+<meta name="description" content="{{ blog_name }} - {{ category }}の記事一覧">
+<link rel="canonical" href="{{ blog_url }}/category/{{ category }}.html">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+{{ adsense_head }}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans JP',sans-serif;color:#1e293b;background:{{ theme.light_bg or '#f0fdf4' }};line-height:1.8;}
+a{color:{{ theme.primary or '#059669' }};text-decoration:none;}
+a:hover{text-decoration:underline;}
+header{background:linear-gradient(135deg,{{ theme.gradient_start or '#059669' }},{{ theme.gradient_end or '#047857' }});color:#fff;padding:16px 0;}
+header .inner{max-width:900px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;}
+header h1 a{color:#fff;font-size:18px;font-weight:700;}
+header nav a{color:#fff;margin-left:20px;font-size:14px;}
+.container{max-width:900px;margin:0 auto;padding:32px 20px;}
+.breadcrumb{font-size:13px;color:#64748b;margin-bottom:20px;}
+.breadcrumb a{color:{{ theme.primary or '#059669' }};}
+.page-title{font-size:24px;font-weight:700;margin-bottom:8px;}
+.page-count{font-size:14px;color:#64748b;margin-bottom:24px;}
+.card{background:{{ theme.light_surface or '#ffffff' }};border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.08);transition:transform 0.2s;}
+.card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.12);}
+.card h2{font-size:18px;margin-bottom:8px;line-height:1.4;}
+.card h2 a{color:#1e293b;}
+.card .meta{font-size:13px;color:#64748b;margin-bottom:8px;}
+.card .desc{font-size:14px;color:#475569;line-height:1.6;}
+footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:13px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <h1><a href="{{ blog_url }}">{{ blog_name }}</a></h1>
+    <nav><a href="{{ blog_url }}">HOME</a></nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb">
+    <a href="{{ blog_url }}">HOME</a> &gt; {{ category }}
+  </div>
+  <h1 class="page-title">{{ category }}</h1>
+  <p class="page-count">{{ article_count }}件の記事</p>
+  {% for article in articles %}
+  <div class="card">
+    <div class="meta"><span>{{ article.date }}</span></div>
+    <h2><a href="{{ blog_url }}/articles/{{ article.slug }}.html">{{ article.title }}</a></h2>
+    <p class="desc">{{ article.description[:120] }}{% if article.description|length > 120 %}...{% endif %}</p>
+  </div>
+  {% endfor %}
+</div>
+<footer>&copy; {{ blog_name }}. All rights reserved.</footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="{{ blog_language }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ blog_name }} - {{ blog_description[:60] }}</title>
+<meta name="description" content="{{ blog_description }}">
+<meta property="og:title" content="{{ blog_name }}">
+<meta property="og:description" content="{{ blog_description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ blog_url }}">
+<link rel="canonical" href="{{ blog_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ blog_name }}" href="{{ blog_url }}/feed.xml">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+{{ adsense_head }}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans JP',sans-serif;color:#1e293b;background:{{ theme.light_bg or '#f0fdf4' }};line-height:1.8;}
+a{color:{{ theme.primary or '#059669' }};text-decoration:none;}
+a:hover{text-decoration:underline;}
+header{background:linear-gradient(135deg,{{ theme.gradient_start or '#059669' }},{{ theme.gradient_end or '#047857' }});color:#fff;padding:40px 0;text-align:center;}
+header h1{font-size:28px;font-weight:700;margin-bottom:8px;}
+header p{font-size:15px;opacity:0.9;}
+.container{max-width:900px;margin:0 auto;padding:32px 20px;}
+.layout{display:grid;grid-template-columns:1fr 280px;gap:32px;}
+@media(max-width:768px){.layout{grid-template-columns:1fr;}}
+.article-list .card{background:{{ theme.light_surface or '#ffffff' }};border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.08);transition:transform 0.2s;}
+.article-list .card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.12);}
+.article-list .card h2{font-size:18px;margin-bottom:8px;line-height:1.4;}
+.article-list .card h2 a{color:#1e293b;}
+.article-list .card .meta{font-size:13px;color:#64748b;margin-bottom:8px;}
+.article-list .card .meta .category{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;background:{{ theme.light_bg or '#f0fdf4' }};color:{{ theme.primary or '#059669' }};border:1px solid {{ theme.primary or '#059669' }};}
+.article-list .card .desc{font-size:14px;color:#475569;line-height:1.6;}
+.sidebar .widget{background:{{ theme.light_surface or '#ffffff' }};border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.08);}
+.sidebar .widget h3{font-size:15px;font-weight:700;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid {{ theme.primary or '#059669' }};}
+.sidebar .widget ul{list-style:none;padding:0;}
+.sidebar .widget li{margin-bottom:8px;}
+.sidebar .widget li a{font-size:14px;color:#475569;}
+.pagination{text-align:center;margin-top:32px;}
+.pagination a,.pagination span{display:inline-block;padding:8px 16px;margin:0 4px;border-radius:8px;font-size:14px;}
+.pagination a{background:{{ theme.light_surface or '#ffffff' }};color:{{ theme.primary or '#059669' }};border:1px solid #e2e8f0;}
+.pagination span.current{background:{{ theme.primary or '#059669' }};color:#fff;}
+footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:13px;}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="{{ blog_url }}" style="color:#fff;">{{ blog_name }}</a></h1>
+  <p>{{ blog_description }}</p>
+</header>
+<div class="container">
+  <div class="layout">
+    <div class="article-list">
+      {% for article in articles %}
+      <div class="card">
+        <div class="meta">
+          <span>{{ article.date }}</span>
+          <span class="category">{{ article.category }}</span>
+        </div>
+        <h2><a href="{{ blog_url }}/articles/{{ article.slug }}.html">{{ article.title }}</a></h2>
+        <p class="desc">{{ article.description[:120] }}{% if article.description|length > 120 %}...{% endif %}</p>
+      </div>
+      {% endfor %}
+      {% if articles|length == 0 %}
+      <div class="card" style="text-align:center;color:#94a3b8;padding:48px;">
+        まだ記事がありません
+      </div>
+      {% endif %}
+      {% if total_pages > 1 %}
+      <div class="pagination">
+        {% if current_page > 1 %}
+        <a href="{% if current_page == 2 %}{{ blog_url }}{% else %}{{ blog_url }}/page/{{ current_page - 1 }}.html{% endif %}">&laquo; PREV</a>
+        {% endif %}
+        {% for p in range(1, total_pages + 1) %}
+          {% if p == current_page %}
+          <span class="current">{{ p }}</span>
+          {% else %}
+          <a href="{% if p == 1 %}{{ blog_url }}{% else %}{{ blog_url }}/page/{{ p }}.html{% endif %}">{{ p }}</a>
+          {% endif %}
+        {% endfor %}
+        {% if current_page < total_pages %}
+        <a href="{{ blog_url }}/page/{{ current_page + 1 }}.html">NEXT &raquo;</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    <aside class="sidebar">
+      {% if categories %}
+      <div class="widget">
+        <h3>カテゴリ</h3>
+        <ul>
+          {% for cat, cat_articles in categories.items() %}
+          <li><a href="{{ blog_url }}/category/{{ cat }}.html">{{ cat }} ({{ cat_articles|length }})</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+</div>
+<footer>&copy; {{ blog_name }}. All rights reserved.</footer>
+</body>
+</html>
