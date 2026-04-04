@@ -48,8 +48,9 @@ except ImportError:
             else:
                 prompt = self._build_default_prompt(keyword, category)
 
-            # 最大3回リトライ（サーバー切断対策）
+            # 最大3回リトライ（サーバー切断対策、エクスポーネンシャルバックオフ）
             last_error = None
+            base_delay = 5
             for attempt in range(3):
                 try:
                     response = self.client.models.generate_content(
@@ -60,7 +61,9 @@ except ImportError:
                     last_error = e
                     logger.warning("Gemini API呼び出し失敗（%d/3）: %s", attempt + 1, e)
                     if attempt < 2:
-                        time.sleep(5)
+                        wait = base_delay * (2 ** attempt)
+                        logger.info("エクスポーネンシャルバックオフ: %d秒待機", wait)
+                        time.sleep(wait)
             else:
                 raise ValueError(f"Gemini API呼び出し3回失敗: {last_error}")
 

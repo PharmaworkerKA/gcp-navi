@@ -10,11 +10,11 @@ BLOG_DESCRIPTION = (
     "海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、"
     "CRA・CRC向けに実践的に解説。"
 )
-BLOG_URL = "https://musclelove-777.github.io/gcp-navi"
+BLOG_URL = "https://pharmaworkerka.github.io/gcp-navi"
 BLOG_TAGLINE = "GCP実務の最新情報を日本語で発信"
 BLOG_LANGUAGE = "ja"
 
-GITHUB_REPO = "MuscleLove-777/gcp-navi"
+GITHUB_REPO = "PharmaworkerKA/gcp-navi"
 GITHUB_BRANCH = "gh-pages"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
@@ -50,7 +50,7 @@ ARTICLES_PER_DAY = 1
 SCHEDULE_HOURS = [8]
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-2.5-flash-lite"
 
 ENABLE_SEO_OPTIMIZATION = True
 MIN_SEO_SCORE = 75

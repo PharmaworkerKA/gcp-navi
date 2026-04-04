@@ -76,9 +76,9 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:13px;}
     </div>
     <h1>{{ article.title }}</h1>
     {% if toc %}
-    <div class="toc">{{ toc }}</div>
+    <div class="toc">{{ toc | safe }}</div>
     {% endif %}
-    <div class="content">{{ content }}</div>
+    <div class="content">{{ content | safe }}</div>
     {% if article.tags %}
     <div class="tags">
       {% for tag in article.tags %}<span>#{{ tag }}</span>{% endfor %}
