@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GCP実務ナビ</title>
+    <link>https://pharmaworkerka.github.io/gcp-navi</link>
+    <description>臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。</description>
+    <language>ja</language><lastBuildDate>Sat, 04 Apr 2026 06:56:00 +0900</lastBuildDate>
+    <item><title>ICH E6(R3) Principles徹底解説！GCP改訂の全貌と実務対応</title><link>https://pharmaworkerka.github.io/gcp-navi/articles/ich-e6-r3-principles-gcp-kaitei-practical.html</link><guid>https://pharmaworkerka.github.io/gcp-navi/articles/ich-e6-r3-principles-gcp-kaitei-practical.html</guid></item>
+  </channel>
+</rss>

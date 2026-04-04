@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pharmaworkerka.github.io/gcp-navi/sitemap.xml
