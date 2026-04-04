@@ -166,6 +166,17 @@ def run(cfg=None, prm=None):
     except Exception as img_err:
         logger.warning("画像取得スキップ: %s", img_err)
 
+    # ステップ2.8: 記事JSON再保存（アイキャッチ・アフィリエイト追加後）
+    try:
+        file_path = article.get("file_path")
+        if file_path:
+            save_data = {k: v for k, v in article.items() if k != "file_path"}
+            with open(file_path, "w", encoding="utf-8") as f:
+                json.dump(save_data, f, ensure_ascii=False, indent=2)
+            logger.info("記事を再保存: %s", file_path)
+    except Exception as e:
+        logger.warning("記事の再保存スキップ: %s", e)
+
     # ステップ3: サイトビルド
     logger.info("ステップ3: サイトビルド")
     try:
