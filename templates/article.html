@@ -10,6 +10,10 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="{{ blog_url }}/articles/{{ article.slug }}.html">
 <link rel="canonical" href="{{ blog_url }}/articles/{{ article.slug }}.html">
+{% if article.eyecatch_url %}
+<meta property="og:image" content="{{ article.eyecatch_url }}">
+<meta name="twitter:image" content="{{ article.eyecatch_url }}">
+{% endif %}
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
 {{ adsense_head }}
 <style>
@@ -75,6 +79,9 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:13px;}
       <span class="category">{{ article.category }}</span>
     </div>
     <h1>{{ article.title }}</h1>
+    {% if article.eyecatch_url %}
+    <div class="article-hero" style="background: url('{{ article.eyecatch_url }}') center/cover no-repeat; height: 300px; border-radius: 12px; margin-bottom: 24px;"></div>
+    {% endif %}
     {% if toc %}
     <div class="toc">{{ toc | safe }}</div>
     {% endif %}

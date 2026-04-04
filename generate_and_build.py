@@ -160,18 +160,9 @@ def run(cfg=None, prm=None):
     # ステップ2.7: アイキャッチ画像取得
     logger.info("ステップ2.7: アイキャッチ画像取得")
     try:
-        from image_fetcher import ImageFetcher
-        fetcher = ImageFetcher(cfg)
-        eyecatch_url = fetcher.fetch_eyecatch(article)
-        if eyecatch_url:
-            article["eyecatch_url"] = eyecatch_url
-            if article.get("file_path"):
-                import json as _json
-                with open(article["file_path"], "w", encoding="utf-8") as _f:
-                    _json.dump(article, _f, ensure_ascii=False, indent=2)
-            logger.info("アイキャッチ画像: %s", eyecatch_url)
-        else:
-            logger.info("アイキャッチ画像: CSSグラデーションを使用")
+        from eyecatch import add_eyecatch_to_article
+        article = add_eyecatch_to_article(article, cfg.BLOG_NAME)
+        logger.info("アイキャッチ画像: %s", article.get("eyecatch_url", "なし"))
     except Exception as img_err:
         logger.warning("画像取得スキップ: %s", img_err)
 
