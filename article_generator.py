@@ -48,7 +48,7 @@ except ImportError:
             else:
                 prompt = self._build_default_prompt(keyword, category)
 
-            # 最大3回リトライ（サーバー切断対策、エクスポーネンシャルバックオフ）
+            # 最大3回リトライ（API失敗・パース失敗の両方に対応）
             last_error = None
             base_delay = 5
             for attempt in range(3):
@@ -56,18 +56,18 @@ except ImportError:
                     response = self.client.models.generate_content(
                         model=self.model_name, contents=prompt
                     )
+                    article = self._parse_response(response.text)
                     break
                 except Exception as e:
                     last_error = e
-                    logger.warning("Gemini API呼び出し失敗（%d/3）: %s", attempt + 1, e)
+                    logger.warning("記事生成失敗（%d/3）: %s", attempt + 1, e)
                     if attempt < 2:
                         wait = base_delay * (2 ** attempt)
-                        logger.info("エクスポーネンシャルバックオフ: %d秒待機", wait)
+                        logger.info("リトライ: %d秒後に再試行", wait)
                         time.sleep(wait)
             else:
-                raise ValueError(f"Gemini API呼び出し3回失敗: {last_error}")
+                raise ValueError(f"記事生成3回失敗: {last_error}")
 
-            article = self._parse_response(response.text)
             article["keyword"] = keyword
             article["category"] = category
             article["generated_at"] = datetime.now().isoformat()
@@ -137,6 +137,8 @@ JSON形式で生成してください。
             required = ["title", "content", "meta_description", "tags", "slug"]
             missing = [f for f in required if f not in data]
             if missing:
+                logger.error("パース結果のキー: %s", list(data.keys()))
+                logger.error("レスポンス先頭500文字: %s", response_text[:500])
                 raise ValueError(f"必須フィールド不足: {missing}")
 
             if not isinstance(data["tags"], list):
