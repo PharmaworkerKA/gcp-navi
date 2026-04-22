@@ -4,7 +4,7 @@
     <title>GCP実務ナビ</title>
     <link>https://pharmaworkerka.github.io/gcp-navi</link>
     <description>臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。</description>
-    <language>ja</language><lastBuildDate>Tue, 21 Apr 2026 05:38:16 +0900</lastBuildDate>
+    <language>ja</language><lastBuildDate>Wed, 22 Apr 2026 05:36:50 +0900</lastBuildDate>
     <item><title>ICH-GCP E6(R3)徹底解説：臨床試験の未来と実務対応</title><link>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6-r3-expert-guide.html</link><guid>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6-r3-expert-guide.html</guid></item>
     <item><title>ICH-GCP E6(R3)品質マネジメント実践ガイド</title><link>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-quality-management-guide.html</link><guid>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-quality-management-guide.html</guid></item>
     <item><title>ICH-GCP E6(R3)の変更点を徹底解説！実務への影響と対応</title><link>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-change-points.html</link><guid>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-change-points.html</guid></item>
@@ -23,5 +23,6 @@
     <item><title>ICH-GCP E6(R3) 改訂を徹底解説！臨床試験の実務変更点と対応</title><link>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-kaitei-clinical-trial-changes.html</link><guid>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-kaitei-clinical-trial-changes.html</guid></item>
     <item><title>ICH-GCP E6(R3)完全解説！CRA/CRCが知るべき改訂と実務対応</title><link>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-expert-guide.html</link><guid>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-expert-guide.html</guid></item>
     <item><title>ICH-GCP E6(R3)徹底解説！改訂と実務対応</title><link>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-practical-guide.html</link><guid>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-practical-guide.html</guid></item>
+    <item><title>ICH-GCP E6(R3)改訂を徹底解説！CRA/CRC必須の実務対応</title><link>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6-r3-changes-cra-crc-guide.html</link><guid>https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6-r3-changes-cra-crc-guide.html</guid></item>
   </channel>
 </rss>
