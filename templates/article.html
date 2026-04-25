@@ -16,6 +16,25 @@
 {% endif %}
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
 {{ adsense_head }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ article.title|e }}",
+  "description": "{{ (article.description or article.title)|e }}",
+  "datePublished": "{{ article.date or '' }}",
+  "dateModified": "{{ article.date_modified or article.date or '' }}",
+  "author": {"@type": "Organization", "name": "{{ blog_name|e }}"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ blog_name|e }}"{% if article.eyecatch_url %},
+    "logo": {"@type": "ImageObject", "url": "{{ article.eyecatch_url }}"}{% endif %}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "{{ blog_url }}/articles/{{ article.slug }}.html"}{% if article.eyecatch_url %},
+  "image": "{{ article.eyecatch_url }}"{% endif %}{% if article.tags %},
+  "keywords": "{{ article.tags|join(', ')|e }}"{% endif %}
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Noto Sans JP',sans-serif;color:#1e293b;background:{{ theme.light_bg or '#f0fdf4' }};line-height:1.8;}
