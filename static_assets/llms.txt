@@ -1,0 +1,35 @@
+# GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。
+
+> 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。
+
+## Main Pages
+
+- [Home](https://pharmaworkerka.github.io/gcp-navi/): main page of GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+
+## Articles (most recent)
+
+- [gcp navi](https://pharmaworkerka.github.io/gcp-navi): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6 r3 expert guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6-r3-expert-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 quality management guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-quality-management-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 change points.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-change-points.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich e6 r3 practical guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-e6-r3-practical-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich e6r3 finalization clinical trial guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-e6r3-finalization-clinical-trial-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich e6 r3 gcp revision guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-e6-r3-gcp-revision-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 guide for cra crc.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-guide-for-cra-crc.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6 r3 kaiten taisaku.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6-r3-kaiten-taisaku.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich e6 r3 expert guide cra crc.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-e6-r3-expert-guide-cra-crc.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 henkouten cra crc jitsumu taiou.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-henkouten-cra-crc-jitsumu-taiou.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 revision guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-revision-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 changes cra crc.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-changes-cra-crc.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6 r3 kaittei jitsumu henkouten.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6-r3-kaittei-jitsumu-henkouten.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 expert guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-expert-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 kaitei clinical trial changes.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-kaitei-clinical-trial-changes.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 practical guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-practical-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6 r3 changes cra crc guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6-r3-changes-cra-crc-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 clinical trial guide.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-clinical-trial-guide.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+- [ich gcp e6r3 kaitei jitsumu taio.html](https://pharmaworkerka.github.io/gcp-navi/articles/ich-gcp-e6r3-kaitei-jitsumu-taio.html): article on GCP実務ナビ - 臨床試験のGCP（Good Clinical Practice）実務知識を毎日更新。海外の最新ICH-GCPガイドライン動向を日本語で翻訳・要約し、CRA・CRC向けに実践的に解説。.
+
+## About this file
+
+This llms.txt follows the llmstxt.org proposal and lists the main entry points of this site for LLM-based crawlers and AI search agents.
+Generated automatically from sitemap.xml. Source repository: https://github.com/MuscleLove-777/gcp-navi
