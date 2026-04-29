@@ -1,8 +1,6 @@
 name: GCP Navi - Auto Generate
 
 on:
-  schedule:
-    - cron: '30 10 * * *'
   workflow_dispatch:
 
 permissions:
